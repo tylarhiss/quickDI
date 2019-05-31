@@ -6,6 +6,7 @@ import {
   PNR_CREDIT_GRAPH_REQUEST
 } from './realTokens';
 import { pnrCreditAddFactory } from './pnrCreditAddRequestFactory';
+import { breadownFragment } from './breakdown-in-external-folder';
 
 @NgModule({
   declarations: [],
@@ -13,38 +14,7 @@ import { pnrCreditAddFactory } from './pnrCreditAddRequestFactory';
   providers: [
     {
       provide: BREAKDOWN_GRAPH_FRAGMENT,
-      useValue: `fragment breakdown on BookingPriceBreakdown {
-            balanceDue
-            authorizedBalanceDue
-            total: totalCharged
-            journeyTotals {
-              totalDiscount
-              totalTax
-              totalAmount
-            }
-            journeys {
-              key
-              value {
-                  journeyKey
-                  totalAmount
-                  totalTax
-              }
-            }
-            passengerTotals {
-              seats {
-                total
-                taxes
-              }
-              specialServices {
-                taxes
-                total
-              }
-              infant {
-                total
-                taxes
-              }
-            }
-          }`
+      useValue: breadownFragment
     },
     {
       provide: FEES_GRAPH_FRAGMENT,
