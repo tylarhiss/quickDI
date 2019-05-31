@@ -15,25 +15,37 @@ import {
   FEES_GRAPH_FRAGMENT
 } from './realishExample/realTokens';
 import { breakdownFragmentFactory } from './realishExample/breakdownFactory';
+import { OverrideServicerComponent } from './override-servicer/override-servicer.component';
 
 @NgModule({
-  declarations: [AppComponent, ShowServiceComponent, RealFragmentUserComponent],
-  imports: [BrowserModule, AppRoutingModule, SubModule, DataModule],
-  providers: [
-    S1Service,
-    S2Service
+  imports: [],
+  exports: [],
+  declarations: [],
+  providers: [S1Service, S2Service]
+})
+export class NameModule {}
 
-    // {
-    //   provide: BREAKDOWN_GRAPH_FRAGMENT,
-    //   useValue: `fragment breakdown on BookingPriceBreakdown {
-    //     balanceDue
-    //   }`
-    // }
+@NgModule({
+  declarations: [
+    AppComponent,
+    ShowServiceComponent,
+    RealFragmentUserComponent,
+    OverrideServicerComponent
+  ],
+  imports: [BrowserModule, NameModule, AppRoutingModule, SubModule, DataModule],
+  providers: [
+    {
+      provide: BREAKDOWN_GRAPH_FRAGMENT,
+      useValue: `fragment breakdown on BookingPriceBreakdown {
+        balanceDue
+        totalDue
+      }`
+    }
     // {
     //   provide: BREAKDOWN_GRAPH_FRAGMENT,
     //   useFactory: breakdownFragmentFactory,
     //   deps: [FEES_GRAPH_FRAGMENT]
-    // }
+    // }'
   ],
   bootstrap: [AppComponent]
 })

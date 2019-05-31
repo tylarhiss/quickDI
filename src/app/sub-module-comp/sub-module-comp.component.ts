@@ -9,7 +9,9 @@ import { S1Service, S2Service, S3Service } from '../s1.service';
 export class SubModuleCompComponent implements OnInit {
   value = this.s1.makeNumber();
 
-  constructor(protected s1: S1Service) {}
+  constructor(protected s1: S1Service) {
+    console.log('s', s1);
+  }
 
   ngOnInit() {}
 }

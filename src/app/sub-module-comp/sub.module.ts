@@ -25,13 +25,8 @@ import { S1Service, S2Service, S3Service, S4Service } from '../s1.service';
   providers: [
     {
       provide: S1Service,
-      useExisting: S2Service
+      useClass: S2Service
     }
-    // this will break all of s1 service by overriding the global DI if they are provided root
-    // {
-    //   provide: S3Service,
-    //   useExisting: S4Service
-    // }
   ]
 })
 export class SubModule {}
