@@ -41,11 +41,12 @@ export class NameModule {}
         totalDue
       }`
     }
+
     // {
     //   provide: BREAKDOWN_GRAPH_FRAGMENT,
     //   useFactory: breakdownFragmentFactory,
     //   deps: [FEES_GRAPH_FRAGMENT]
-    // }'
+    // }
   ],
   bootstrap: [AppComponent]
 })

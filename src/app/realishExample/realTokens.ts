@@ -1,5 +1,6 @@
 import { InjectionToken } from '@angular/core';
 
+/** CHECK THIS OUT */
 export const BREAKDOWN_GRAPH_FRAGMENT = new InjectionToken('breakdownFragment');
 export const PAYMENT_GRAPH_FRAGMENT = new InjectionToken('payment fragment');
 export const FEES_GRAPH_FRAGMENT = new InjectionToken('feesFragment');

@@ -21,12 +21,16 @@ import { S1Service, S2Service, S3Service, S4Service } from '../s1.service';
     SubModuleComp3Component,
     SubModuleComp4Component
   ],
-  imports: [BrowserModule],
-  providers: [
-    {
-      provide: S1Service,
-      useClass: S2Service
-    }
-  ]
+  imports: [BrowserModule]
+  // providers: [
+  //   {
+  //     provide: S1Service,
+  //     useClass: S2Service
+  //   },
+  //   {
+  //     provide: S3Service,
+  //     useClass: S4Service
+  //   }
+  // ]
 })
 export class SubModule {}
